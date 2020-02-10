@@ -3,7 +3,7 @@ import Foundation
 /**
  * @brief Different states the LTBL device can be in.
  */
-enum LTBLState: String {
+public enum LTBLState: String {
     case LTBL_UNKNOWN_STATE = "unknown"
     case LTBL_ON = "on"
     case LTBL_OFF = "off"
@@ -30,14 +30,14 @@ fileprivate func parseState(pStr: String) -> LTBLState {
  * @class This class represents a LTBL device.
  */
 public class LTBLDevice: ObservableObject {
-    @Published var state: LTBLState = LTBLState.LTBL_UNKNOWN_STATE
-    var IPAddr: String?
+    @Published public var state: LTBLState = LTBLState.LTBL_UNKNOWN_STATE
+    public var IPAddr: String?
 
-    init(_ pIPAddr: String) {
+    public init(_ pIPAddr: String) {
         IPAddr = pIPAddr
     }
 
-    func getHomePage() -> Void {
+    public func getHomePage() -> Void {
         var lDataString: String = ""
 
         let url = URL(string: "http://" + IPAddr!)!
@@ -60,7 +60,7 @@ public class LTBLDevice: ObservableObject {
         urlSessionTask.resume()
     }
 
-    func turnOn() -> Void {
+    public func turnOn() -> Void {
         var lDataString: String = ""
 
         let url = URL(string: "http://" + IPAddr! + "/on")!
@@ -83,7 +83,7 @@ public class LTBLDevice: ObservableObject {
         urlSessionTask.resume()
     }
 
-    func turnOff() -> Void {
+   public func turnOff() -> Void {
         var lDataString: String = ""
 
         let url = URL(string: "http://" + IPAddr! + "/off")!
@@ -106,7 +106,7 @@ public class LTBLDevice: ObservableObject {
         urlSessionTask.resume()
     }
 
-    func toggle() -> Void {
+    public func toggle() -> Void {
         switch(self.state) {
         case LTBLState.LTBL_ON:
             self.turnOff()
@@ -118,7 +118,7 @@ public class LTBLDevice: ObservableObject {
         }
     }
 
-    func switchState(_ pState: LTBLState) -> Void {
+    public func switchState(_ pState: LTBLState) -> Void {
         switch(pState) {
         case LTBLState.LTBL_ON:
             self.turnOn()
