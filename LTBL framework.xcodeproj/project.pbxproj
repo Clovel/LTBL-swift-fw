@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		87E118CF23F1FAC50041A4C1 /* LTBL_framework.h in Headers */ = {isa = PBXBuildFile; fileRef = 87E118CD23F1FAC50041A4C1 /* LTBL_framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87E118D623F1FAD40041A4C1 /* LTBLDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E118D523F1FAD40041A4C1 /* LTBLDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87E118CA23F1FAC50041A4C1 /* LTBL_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LTBL_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87E118CA23F1FAC50041A4C1 /* LTBL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LTBL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E118CD23F1FAC50041A4C1 /* LTBL_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTBL_framework.h; sourceTree = "<group>"; };
 		87E118CE23F1FAC50041A4C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87E118D523F1FAD40041A4C1 /* LTBLDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTBLDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 		87E118CB23F1FAC50041A4C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87E118CA23F1FAC50041A4C1 /* LTBL_framework.framework */,
+				87E118CA23F1FAC50041A4C1 /* LTBL.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,6 +48,7 @@
 		87E118CC23F1FAC50041A4C1 /* LTBL framework */ = {
 			isa = PBXGroup;
 			children = (
+				87E118D523F1FAD40041A4C1 /* LTBLDevice.swift */,
 				87E118CD23F1FAC50041A4C1 /* LTBL_framework.h */,
 				87E118CE23F1FAC50041A4C1 /* Info.plist */,
 			);
@@ -66,9 +69,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		87E118C923F1FAC50041A4C1 /* LTBL framework */ = {
+		87E118C923F1FAC50041A4C1 /* LTBL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87E118D223F1FAC50041A4C1 /* Build configuration list for PBXNativeTarget "LTBL framework" */;
+			buildConfigurationList = 87E118D223F1FAC50041A4C1 /* Build configuration list for PBXNativeTarget "LTBL" */;
 			buildPhases = (
 				87E118C523F1FAC50041A4C1 /* Headers */,
 				87E118C623F1FAC50041A4C1 /* Sources */,
@@ -79,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "LTBL framework";
+			name = LTBL;
 			productName = "LTBL framework";
-			productReference = 87E118CA23F1FAC50041A4C1 /* LTBL_framework.framework */;
+			productReference = 87E118CA23F1FAC50041A4C1 /* LTBL.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					87E118C923F1FAC50041A4C1 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -111,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87E118C923F1FAC50041A4C1 /* LTBL framework */,
+				87E118C923F1FAC50041A4C1 /* LTBL */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E118D623F1FAD40041A4C1 /* LTBLDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +264,7 @@
 		87E118D323F1FAC50041A4C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -275,6 +281,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.clovel.LTBL-framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -282,6 +289,7 @@
 		87E118D423F1FAC50041A4C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -314,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87E118D223F1FAC50041A4C1 /* Build configuration list for PBXNativeTarget "LTBL framework" */ = {
+		87E118D223F1FAC50041A4C1 /* Build configuration list for PBXNativeTarget "LTBL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87E118D323F1FAC50041A4C1 /* Debug */,
